@@ -32,7 +32,7 @@ module Sorcery
             @sorcery_config.after_config.each { |c| send(c) }
           end
 
-          protected
+          #protected
 
           # includes required submodules into the model class,
           # which usually is called User.
@@ -123,7 +123,7 @@ module Sorcery
         @sorcery_config.encryption_provider.encrypt(*tokens)
       end
 
-      protected
+      #protected
 
       def set_encryption_attributes()
         @sorcery_config.encryption_provider.stretches = @sorcery_config.stretches if @sorcery_config.encryption_provider.respond_to?(:stretches) && @sorcery_config.stretches
@@ -164,7 +164,7 @@ module Sorcery
         send(sorcery_config.crypted_password_attribute_name).nil?
       end
 
-      protected
+      # protected
 
       # creates new salt and saves it.
       # encrypts password with salt and saves it.
